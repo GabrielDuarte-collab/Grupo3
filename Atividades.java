@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Atividades {
 
     static ArrayList<Map<String, Object>> alunos = new ArrayList<>();
-    static Map<String, Integer> indiceMatricula = new HashMap<>();
+    static Map<String, Integer> Matricula = new HashMap<>();
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -16,36 +16,28 @@ public class Atividades {
             System.out.println("1 - Cadastrar aluno");
             System.out.println("2 - Buscar por matrícula");
             System.out.println("3 - Listar todos");
-            System.out.println("4 - Remover por matrícula");
             System.out.println("5 - Sair");
             System.out.print("Escolha: ");
 
             int opcao = sc.nextInt();
-            sc.nextLine(); // limpar buffer
+            sc.nextLine();
 
             if (opcao == 1) {
                 cadastrarAluno();
-            } 
-            else if (opcao == 2) {
+            } else if (opcao == 2) {
                 buscarAluno();
-            } 
-            else if (opcao == 3) {
+            } else if (opcao == 3) {
                 listarAlunos();
-            } 
-            else if (opcao == 4) {
-                
-            } 
+            }
+
             else if (opcao == 5) {
                 System.out.println("Programa encerrado.");
                 break;
-            } 
-            else {
+            } else {
                 System.out.println("Opção inválida!");
             }
         }
     }
-
-    // ================= MÉTODOS =================
 
     static void cadastrarAluno() {
         System.out.print("Nome: ");
@@ -58,7 +50,7 @@ public class Atividades {
         System.out.print("Matrícula: ");
         String matricula = sc.nextLine();
 
-        if (indiceMatricula.containsKey(matricula)) {
+        if (Matricula.containsKey(matricula)) {
             System.out.println("Matrícula já cadastrada!");
             return;
         }
@@ -69,7 +61,7 @@ public class Atividades {
         aluno.put("matricula", matricula);
 
         alunos.add(aluno);
-        indiceMatricula.put(matricula, alunos.size() - 1);
+        Matricula.put(matricula, alunos.size() - 1);
 
         System.out.println("Aluno cadastrado com sucesso!");
     }
@@ -78,12 +70,12 @@ public class Atividades {
         System.out.print("Informe a matrícula: ");
         String matricula = sc.nextLine();
 
-        if (!indiceMatricula.containsKey(matricula)) {
+        if (!Matricula.containsKey(matricula)) {
             System.out.println("Aluno não encontrado.");
             return;
         }
 
-        int index = indiceMatricula.get(matricula);
+        int index = Matricula.get(matricula);
         Map<String, Object> aluno = alunos.get(index);
 
         System.out.println("Nome: " + aluno.get("nome"));
@@ -106,5 +98,3 @@ public class Atividades {
         }
     }
 }
-
-    
