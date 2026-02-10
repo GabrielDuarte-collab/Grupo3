@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Atividades {
 
@@ -28,9 +25,7 @@ public class Atividades {
                 buscarAluno();
             } else if (opcao == 3) {
                 listarAlunos();
-            }
-
-            else if (opcao == 5) {
+            }else if (opcao == 5) {
                 System.out.println("Programa encerrado.");
                 break;
             } else {
