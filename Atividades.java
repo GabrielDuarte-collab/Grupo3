@@ -13,7 +13,7 @@ public class Atividades {
             System.out.println("1 - Cadastrar aluno");
             System.out.println("2 - Buscar por matrícula");
             System.out.println("3 - Listar todos");
-            System.out.println("5 - Sair");
+            System.out.println("4 - Sair");
             System.out.print("Escolha: ");
 
             int opcao = sc.nextInt();
