@@ -17,7 +17,7 @@ public class Atividades {
             System.out.print("Escolha: ");
 
             int opcao = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine().trim();
 
             if (opcao == 1) {
                 cadastrarAluno();
@@ -25,7 +25,7 @@ public class Atividades {
                 buscarAluno();
             } else if (opcao == 3) {
                 listarAlunos();
-            }else if (opcao == 5) {
+            }else if (opcao == 4) {
                 System.out.println("Programa encerrado.");
                 break;
             } else {
@@ -36,14 +36,14 @@ public class Atividades {
 
     static void cadastrarAluno() {
         System.out.print("Nome: ");
-        String nome = sc.nextLine();
+        String nome = sc.nextLine().trim();
 
         System.out.print("Idade: ");
         int idade = sc.nextInt();
-        sc.nextLine();
+        sc.nextLine().trim();
 
         System.out.print("Matrícula: ");
-        String matricula = sc.nextLine();
+        String matricula = sc.nextLine().trim();
 
         if (Matricula.containsKey(matricula)) {
             System.out.println("Matrícula já cadastrada!");
@@ -63,15 +63,15 @@ public class Atividades {
 
     static void buscarAluno() {
         System.out.print("Informe a matrícula: ");
-        String matricula = sc.nextLine();
+        String matricula = sc.nextLine().trim();
 
         if (!Matricula.containsKey(matricula)) {
             System.out.println("Aluno não encontrado.");
             return;
         }
 
-        int index = Matricula.get(matricula);
-        Map<String, Object> aluno = alunos.get(index);
+        int Mat = Matricula.get(matricula);
+        Map<String, Object> aluno = alunos.get(Mat);
 
         System.out.println("Nome: " + aluno.get("nome"));
         System.out.println("Idade: " + aluno.get("idade"));
@@ -86,7 +86,7 @@ public class Atividades {
 
         System.out.println("\n=== LISTA DE ALUNOS ===");
         for (Map<String, Object> aluno : alunos) {
-            System.out.println("--------------------");
+            System.out.println(" ");
             System.out.println("Nome: " + aluno.get("nome"));
             System.out.println("Idade: " + aluno.get("idade"));
             System.out.println("Matrícula: " + aluno.get("matricula"));
